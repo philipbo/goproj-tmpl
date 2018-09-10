@@ -3,6 +3,7 @@ package app
 import (
 	"github.com/BurntSushi/toml"
 	"github.com/pkg/errors"
+	log "github.com/sirupsen/logrus"
 )
 
 type Config struct {
@@ -14,5 +15,7 @@ func DecodeConfig(fPath string) (Config, error) {
 	if _, err := toml.DecodeFile(fPath, &conf); err != nil {
 		return conf, errors.WithStack(err)
 	}
+
+	log.Infof("config: %#v", conf)
 	return conf, nil
 }
