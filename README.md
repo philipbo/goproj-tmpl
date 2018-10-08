@@ -1,2 +1,2 @@
-# web-temp
-web project template
+# goproj-tmpl
+golang project template
