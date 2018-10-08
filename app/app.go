@@ -34,6 +34,11 @@ func (a *App) Init() error {
 	if err := a.initConfig(fpath); err != nil {
 		return errors.WithStack(err)
 	}
+
+	if a.Flags.Env != "" {
+		a.Config.Env = a.Flags.Env
+	}
+
 	return nil
 }
 

@@ -8,6 +8,7 @@ import (
 
 type Config struct {
 	Addr string // example :9000
+	Env  string
 }
 
 func DecodeConfig(fPath string) (Config, error) {
