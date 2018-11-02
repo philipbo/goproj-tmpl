@@ -5,17 +5,19 @@ var (
 )
 
 type Version struct {
-	GitHash   string `json:"git_hash"`
-	GitBranch string `json:"git_branch"`
+	Who       string `json:"who"`
+	Build     string `json:"build"`
+	Branch    string `json:"branch"`
 	GoVersion string `json:"go_version"`
-	BuildTime string `json:"build_time"`
+	Time      string `json:"time"`
 }
 
-func NewVersion(buildTime, githash, gitbranch, goversion string) {
+func NewVersion(who, buildTime, build, branch, goVersion string) {
 	GVersion = Version{
-		GitHash:   githash,
-		GitBranch: gitbranch,
-		GoVersion: goversion,
-		BuildTime: buildTime,
+		Who:       who,
+		Build:     build,
+		Branch:    branch,
+		GoVersion: goVersion,
+		Time:      buildTime,
 	}
 }

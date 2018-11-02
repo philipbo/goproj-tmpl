@@ -15,13 +15,14 @@ var (
 	GitHash   string
 	GitBranch string
 	GoVersion string
+	Who       string
 )
 
 func main() {
-	log.Printf("\nVersion:\nbuild time: %s\ngit hash: %s\ngit branch: %s\ngo version: %s",
-		BuildTime, GitHash, GitBranch, GoVersion)
+	log.Printf("\nVersion:\nbuild time: %s\ngit hash: %s\ngit branch: %s\ngo version: %s\nwho: %s",
+		BuildTime, GitHash, GitBranch, GoVersion, Who)
 
-	version.NewVersion(BuildTime, GitHash, GitBranch, GoVersion)
+	version.NewVersion(Who, BuildTime, GitHash, GitBranch, GoVersion)
 
 	if err := app.GetApp().Init(); err != nil {
 		log.Fatal(err)

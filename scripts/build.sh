@@ -28,20 +28,23 @@ buildTime=`date "+%Y-%m-%d_%H:%M:%S"`
 gitHash=`git rev-parse HEAD`
 gitBranch=`git rev-parse --abbrev-ref HEAD`
 goVersion=`go version`
+who=`whoami`
 
 echo "BuildTime: $buildTime"
 echo "GitHash: $gitHash"
 echo "GitBranch: $gitBranch"
 echo "GoVersion: $goVersion"
-
+echo "Who: $who"
 
 #CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o $name -ldflags "\
+#    -X 'main.Who=$who' \
 #    -X 'main.BuildTime=$buildTime' \
 #    -X 'main.GitHash=$gitHash' \
 #    -X 'main.GitBranch=$gitBranch' \
 #    -X 'main.GoVersion=$goVersion'"
 
 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o $name -ldflags "\
+    -X 'main.Who=$who' \
     -X 'main.BuildTime=$buildTime' \
     -X 'main.GitHash=$gitHash' \
     -X 'main.GitBranch=$gitBranch' \
