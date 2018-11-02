@@ -7,7 +7,7 @@ echo "BASEDIR=$BASEDIR"
 cd $BASEDIR
 cd ..
 
-name=web-temp
+name=goproj-tmpl
 
 case $1 in
 -n | -name)
@@ -35,11 +35,18 @@ echo "GitBranch: $gitBranch"
 echo "GoVersion: $goVersion"
 
 
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o $name -ldflags "\
+#CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o $name -ldflags "\
+#    -X 'main.BuildTime=$buildTime' \
+#    -X 'main.GitHash=$gitHash' \
+#    -X 'main.GitBranch=$gitBranch' \
+#    -X 'main.GoVersion=$goVersion'"
+
+CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o $name -ldflags "\
     -X 'main.BuildTime=$buildTime' \
     -X 'main.GitHash=$gitHash' \
     -X 'main.GitBranch=$gitBranch' \
     -X 'main.GoVersion=$goVersion'"
+
 
 #version="[version]_`whoami`_`date "+%Y-%m-%d__%H:%M:%S"`_`git rev-parse --abbrev-ref HEAD`_`git rev-parse HEAD`"
 #echo "$version"

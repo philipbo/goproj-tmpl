@@ -2,7 +2,7 @@ package v1
 
 import (
 	"github.com/gin-gonic/gin"
-	"web-temp/web/router/base"
+	"goproj-tmpl/web/router/base"
 )
 
 func NewExampleRouter() *ExampleRouter {

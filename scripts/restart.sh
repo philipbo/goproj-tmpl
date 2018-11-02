@@ -8,7 +8,7 @@ cd ..
 git pull
 export GOPATH=/data/go
 
-name=web-temp
+name=goproj-tmpl
 cd /data/go/src/$name
 go install
 sudo supervisorctl restart $name

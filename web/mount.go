@@ -2,8 +2,8 @@ package web
 
 import (
 	"github.com/gin-gonic/gin"
-	"web-temp/mid"
-	"web-temp/web/router"
+	"goproj-tmpl/mid"
+	"goproj-tmpl/web/router"
 )
 
 func Mount() *gin.Engine {

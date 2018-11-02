@@ -1,7 +1,7 @@
 package v1
 
 import (
-	"web-temp/web/router/base"
+	"goproj-tmpl/web/router/base"
 )
 
 func NewV1Router() *V1Router {

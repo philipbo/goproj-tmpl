@@ -2,10 +2,10 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"web-temp/app"
-	"web-temp/version"
-	"web-temp/web/router/base"
-	"web-temp/web/router/v1"
+	"goproj-tmpl/app"
+	"goproj-tmpl/version"
+	"goproj-tmpl/web/router/base"
+	"goproj-tmpl/web/router/v1"
 )
 
 func Load(e *gin.Engine) {

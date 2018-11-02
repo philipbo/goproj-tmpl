@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-name=web-temp
+name=goproj-tmpl
 scriptDir="scripts"
 BASEDIR=$(dirname "$0")
 cd $BASEDIR

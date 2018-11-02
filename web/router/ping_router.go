@@ -3,8 +3,8 @@ package router
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"web-temp/app"
-	"web-temp/web/router/base"
+	"goproj-tmpl/app"
+	"goproj-tmpl/web/router/base"
 )
 
 func NewPingRouter() *PingRouter {

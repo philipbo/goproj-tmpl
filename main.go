@@ -3,11 +3,11 @@ package main
 import (
 	_ "expvar"
 	log "github.com/sirupsen/logrus"
+	"goproj-tmpl/app"
+	"goproj-tmpl/version"
+	"goproj-tmpl/web"
 	"net/http"
 	_ "net/http/pprof"
-	"web-temp/app"
-	"web-temp/version"
-	"web-temp/web"
 )
 
 var (
